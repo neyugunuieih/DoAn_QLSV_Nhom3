@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d894c03d9acb4becb200a4927b81e3a4" Name="Diagram1">
+        <EntityTypeShape EntityType="QLSinhVienModel.DIEM" Width="1.5" PointX="7.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSinhVienModel.GIANGDAY" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSinhVienModel.GIANGVIEN" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSinhVienModel.KHOA" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSinhVienModel.LOP" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSinhVienModel.MONHOC" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSinhVienModel.SINHVIEN" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="QLSinhVienModel.FK__DIEM__MaMon__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSinhVienModel.FK__DIEM__MaSV__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSinhVienModel.FK__GIANGDAY__MaGV__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSinhVienModel.FK__GIANGDAY__MaLop__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSinhVienModel.FK__GIANGDAY__MaMon__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSinhVienModel.FK__GIANGVIEN__MaKho__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSinhVienModel.FK__LOP__MaKhoa__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSinhVienModel.FK__MONHOC__MaKhoa__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSinhVienModel.FK__SINHVIEN__MaLop__29572725" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,94 @@
+﻿<Window x:Class="DoAn_QLSV_Nhom3.View.QLLopHoc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoAn_QLSV_Nhom3.View"
+        mc:Ignorable="d"
+        Loaded="QLLopHoc_Loaded"
+       Title="QUẢN LÝ LỚP" Height="600" Width="950">
+    
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="QUẢN LÝ LỚP"
+               FontSize="40" FontWeight="Bold" Foreground="DarkGreen"
+               HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <Grid Grid.Row="1" Margin="10,0,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="10">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <Label Content="Mã Lớp:" Width="100" FontWeight="Bold" FontSize="18"/>
+                    <TextBox x:Name="txt_malop" Width="150" Height="40" FontSize="18"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <Label Content="Tên Lớp:" Width="100" FontWeight="Bold" FontSize="18"/>
+                    <TextBox x:Name="txt_tenlop" Width="150" Height="40" FontSize="18"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <Label Content="Khóa Học:" Width="100" FontWeight="Bold" FontSize="18"/>
+                    <TextBox x:Name="txt_khoahoc" Width="150" Height="40" FontSize="18"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="10">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <Label Content="Khoa:" Width="100" FontWeight="Bold" FontSize="18"/>
+                    <ComboBox x:Name="cb_khoa" Width="150" Height="40" FontSize="18"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <Label Content="Cố vấn:" Width="100" FontWeight="Bold" FontSize="18"/>
+                    <ComboBox x:Name="cb_covan" Width="150" Height="40" FontSize="18"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <Label Content="Sĩ số:" Width="100" FontWeight="Bold" FontSize="18"/>
+                    <TextBox x:Name="txt_siso" Width="150" Height="40" FontSize="18"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Margin="10">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <Label Content="Năm học:" Width="100" FontWeight="Bold" FontSize="18"/>
+                    <TextBox x:Name="txt_namhoc" Width="150" Height="40" FontSize="18"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <Label Content="Trạng thái:" Width="100" FontWeight="Bold" FontSize="18"/>
+                    <ComboBox x:Name="cb_trangthai" Width="150" Height="40" FontSize="18"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <GroupBox Grid.Row="2" Header="Danh sách lớp" Margin="10,0,10,10" FontWeight="Bold" FontSize="16">
+            <DataGrid x:Name="DG_Lop" AutoGenerateColumns="False" CanUserAddRows="False" Margin="5" FontSize="18" SelectionMode="Single" SelectionUnit="FullRow">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Mã Lớp" Binding="{Binding MaLop}" Width="100"/>
+                    <DataGridTextColumn Header="Tên Lớp" Binding="{Binding TenLop}" Width="150"/>
+                    <DataGridTextColumn Header="Khóa Học" Binding="{Binding KhoaHoc}" Width="100"/>
+                    <DataGridTextColumn Header="Khoa" Binding="{Binding MaKhoa}" Width="120"/>
+                    <DataGridTextColumn Header="Cố vấn" Binding="{Binding CoVanHocTap}" Width="150"/>
+                    <DataGridTextColumn Header="Sĩ số" Binding="{Binding SiSo}" Width="80"/>
+                    <DataGridTextColumn Header="Năm học" Binding="{Binding NamHoc}" Width="120"/>
+                    <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" Width="150"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,6,0,6">
+            <Button x:Name="btn_Luu" Content="Lưu" Width="100" Margin="8" Background="#4CAF50" Foreground="White" Height="35" FontWeight="Bold" FontSize="18" Click="Btn_Luu_Click"/>
+            <Button x:Name="btn_Sua" Content="Sửa" Width="100" Margin="8" Background="#FFC107" Foreground="Black" Height="35" FontWeight="Bold" FontSize="18" Click="Btn_Sua_Click"/>
+            <Button x:Name="btn_Xoa" Content="Xóa" Width="100" Margin="8" Background="#F44336" Foreground="White" Height="35" FontWeight="Bold" FontSize="18" Click="Btn_Xoa_Click"/>
+            <Button x:Name="btn_Thoat" Content="Thoát" Width="100" Margin="8" Background="#9E9E9E" Foreground="White" Height="35" FontWeight="Bold" FontSize="18" Click="Btn_Thoat_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

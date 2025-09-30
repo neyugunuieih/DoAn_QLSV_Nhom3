@@ -1,0 +1,41 @@
+﻿<Window x:Class="DoAn_QLSV_Nhom3.View.TrangChu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoAn_QLSV_Nhom3.View"
+        mc:Ignorable="d"
+        Title="Quản Lý Sinh Viên" Height="600" Width="950">
+    
+    <Grid Background="White">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="900" Height="500">
+            <TextBlock Text="HỆ THỐNG QUẢN LÝ SINH VIÊN"  FontSize="50" FontWeight="Bold" Foreground="DarkBlue" HorizontalAlignment="Center" Margin="0,20,0,40"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="btn_QLSinhVien" Content="Quản lý Sinh viên" Grid.Row="0" Grid.Column="0" Margin="10" Height="50" FontSize="18" FontWeight="Bold" Background="#3498db" Foreground="White" BorderBrush="Transparent" Click="Btn_QLSinhVien_Click"/>
+                <Button x:Name="btn_QLLop" Content="Quản lý Lớp học" Grid.Row="0" Grid.Column="1" Margin="10" Height="50" FontSize="18" FontWeight="Bold" Background="#3498db" Foreground="White" BorderBrush="Transparent" Click="Btn_QLLop_Click"/>
+                <Button x:Name="btn_QLMonHoc" Content="Quản lý Môn học" Grid.Row="1" Grid.Column="0" Margin="10" Height="50" FontSize="18" FontWeight="Bold" Background="#3498db" Foreground="White" BorderBrush="Transparent" Click="Btn_QLMonHoc_Click"/>
+                <Button x:Name="btn_QLDiem" Content="Quản lý Điểm" Grid.Row="1" Grid.Column="1" Margin="10" Height="50" FontSize="18" FontWeight="Bold" Background="#3498db" Foreground="White" BorderBrush="Transparent" Click="Btn_QLDiem_Click"/>
+                <Button x:Name="btn_QLGiangVien" Content="Quản lý Giảng viên" Grid.Row="2" Grid.Column="0" Margin="10" Height="50" FontSize="18" FontWeight="Bold" Background="#3498db" Foreground="White" BorderBrush="Transparent" Click="Btn_QLGiangVien_Click"/>
+
+                <Button x:Name="btn_QLKhoa" Content="Quản lý Khoa" Grid.Row="2" Grid.Column="1" Margin="10" Height="50" FontSize="18" FontWeight="Bold" Background="#3498db" Foreground="White" BorderBrush="Transparent" Click="Btn_QLKhoa_Click"/>
+                <Button x:Name="btn_QLGiangDay" Content="Quản lý Giảng Dạy" Grid.Row="3" Grid.Column="0" Margin="10" Height="50" FontSize="18" FontWeight="Bold" Background="#3498db" Foreground="White" BorderBrush="Transparent" Click="Btn_QLGiangDay_Click"/>
+                <Button x:Name="btn_TKeBCao" Content="Thống Kê - Báo Cáo" Grid.Row="3" Grid.Column="1" Margin="10" Height="50" FontSize="18" FontWeight="Bold" Background="#3498db" Foreground="White" BorderBrush="Transparent" Click="Btn_TKeBCao_Click"/>
+            </Grid>
+
+            <Button x:Name="btn_Thoat" Content="Thoát" Width="150" Height="50" FontSize="18" FontWeight="Bold" Background="#e74c3c" Foreground="White" BorderBrush="Transparent" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,30,10,10" Click="Btn_Thoat_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

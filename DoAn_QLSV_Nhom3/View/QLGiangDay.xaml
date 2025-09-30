@@ -1,0 +1,64 @@
+﻿<Window x:Class="DoAn_QLSV_Nhom3.View.QLGiangDay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoAn_QLSV_Nhom3.View"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="QUẢN LÝ GIẢNG DẠY" Height="600" Width="950">
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="QUẢN LÝ GIẢNG DẠY"
+                   FontSize="40" FontWeight="Bold"
+                   Foreground="DarkRed"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+        <Grid Grid.Row="1" Margin="0,0,0,15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Giáo Viên:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+            <ComboBox x:Name="cb_GiangVien" Grid.Row="0" Grid.Column="1" Height="40" Margin="15,10,0,10" FontSize="18" Width="300"/>
+            <Label Content="Lớp:" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="40,0,0,0"/>
+            <ComboBox x:Name="cb_Lop" Grid.Row="0" Grid.Column="3" Height="40" Margin="15,10,0,10" FontSize="18" Width="300"/>
+
+            <Label Content="Môn Học:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+            <ComboBox x:Name="cb_MonHoc" Grid.Row="1" Grid.Column="1" Height="40" Margin="15,10,0,10" FontSize="18" Width="300"/>
+        </Grid>
+
+        <DataGrid x:Name="DG_GiangDay" Grid.Row="2" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single" Margin="0,0,0,15" FontSize="18" FontWeight="Bold">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã GV" Binding="{Binding MaGV}" Width="100"/>
+                <DataGridTextColumn Header="Tên GV" Binding="{Binding TenGV}" Width="200"/>
+                <DataGridTextColumn Header="Mã Lớp" Binding="{Binding MaLop}" Width="100"/>
+                <DataGridTextColumn Header="Tên Lớp" Binding="{Binding TenLop}" Width="150"/>
+                <DataGridTextColumn Header="Mã Môn" Binding="{Binding MaMon}" Width="100"/>
+                <DataGridTextColumn Header="Tên Môn Học" Binding="{Binding TenMH}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+            <Button x:Name="btn_Luu" Content="Lưu" Width="100" Height="35" Margin="5" Background="#4CAF50" Foreground="White" FontWeight="Bold" FontSize="18" Click="Btn_Luu_Click"/>
+            <Button x:Name="btn_Sua" Content="Sửa" Width="100" Height="35" Margin="5" Background="#FFC107" Foreground="Black" FontWeight="Bold" FontSize="18" Click="Btn_Sua_Click"/>
+            <Button x:Name="btn_Xoa" Content="Xóa" Width="100" Height="35" Margin="5" Background="#F44336" Foreground="White" FontWeight="Bold" FontSize="18" Click="Btn_Xoa_Click"/>
+            <Button x:Name="btn_Thoat" Content="Thoát" Width="100" Height="35" Margin="5" FontWeight="Bold" FontSize="18" Click="Btn_Thoat_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

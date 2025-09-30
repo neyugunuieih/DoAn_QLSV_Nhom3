@@ -1,0 +1,103 @@
+﻿<Window x:Class="DoAn_QLSV_Nhom3.View.QLGiangVien"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoAn_QLSV_Nhom3.View"
+        mc:Ignorable="d"
+        Loaded="QLGiangVien_Loaded"
+        Title="QUẢN LÝ GIẢNG VIÊN" Height="600" Width="950">
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="QUẢN LÝ GIẢNG VIÊN"
+                   FontSize="40"
+                   FontWeight="Bold"
+                   Foreground="DarkGreen"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,5"/>
+
+        <Grid Grid.Row="1" Margin="0,0,0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="350"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Mã Giảng Viên:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                <TextBox x:Name="txt_MaGV" Grid.Row="0" Grid.Column="1" Height="40" Margin="0,5" FontSize="18"/>
+
+                <Label Content="Họ và tên:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                <TextBox x:Name="txt_HoTen" Grid.Row="1" Grid.Column="1" Height="40" Margin="0,5" FontSize="18"/>
+
+                <Label Content="Ngày sinh:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                <DatePicker x:Name="dt_NgaySinh" Grid.Row="2" Grid.Column="1" Height="40" Margin="0,5" FontSize="18"/>
+
+                <Label Content="Giới tính:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="0,5" Height="40">
+                    <RadioButton x:Name="rb_Nam" Content="Nam" GroupName="Gender" FontSize="18" FontWeight="Bold" Margin="0,10,0,10"/>
+                    <RadioButton x:Name="rb_Nu" Content="Nữ" GroupName="Gender" FontSize="18" FontWeight="Bold" Margin="20,10,0,10"/>
+                </StackPanel>
+
+                <Label Content="Địa chỉ:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                <TextBox x:Name="txt_DiaChi" Grid.Row="4" Grid.Column="1" Height="40" Margin="0,5" FontSize="18"/>
+
+                <Label Content="Bộ môn:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                <ComboBox x:Name="cb_BoMon" Grid.Row="5" Grid.Column="1" Height="40" Margin="0,5" FontSize="18">
+                    <ComboBoxItem Content="Công nghệ thông tin"/>
+                    <ComboBoxItem Content="Toán học"/>
+                    <ComboBoxItem Content="Vật lý"/>
+                    <ComboBoxItem Content="Hóa học"/>
+                </ComboBox>
+            </Grid>
+
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,20,0,0">
+                <Ellipse Width="200" Height="200" Stroke="Gray" StrokeThickness="2">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="D:\laptrinhungdung\DoAn_QLSV_Nhom3\DoAn_QLSV_Nhom3\img\logo_gv.png"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Button Content="Đổi Avatar" Width="150" Height="35" Margin="0 10" Background="#FF9800" Foreground="White" FontSize="18" FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+
+        <GroupBox Header="Danh sách giảng viên" Grid.Row="2" FontWeight="Bold" FontSize="16">
+            <DataGrid x:Name="DG_GiangVien" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" FontWeight="Bold" FontSize="18">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Mã GV" Binding="{Binding MaGV}" Width="100"/>
+                    <DataGridTextColumn Header="Họ và tên" Binding="{Binding HoTen}" Width="200"/>
+                    <DataGridTextColumn Header="Ngày sinh" Binding="{Binding NgaySinh, StringFormat=d}" Width="120"/>
+                    <DataGridTextColumn Header="Giới tính" Binding="{Binding GioiTinh}" Width="100"/>
+                    <DataGridTextColumn Header="Địa chỉ" Binding="{Binding DiaChi}" Width="200"/>
+                    <DataGridTextColumn Header="Bộ môn" Binding="{Binding BoMon}" Width="200"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Button x:Name="btn_Luu" Content="Lưu" Width="100" Height="35" Margin="5" Background="#2196F3" Foreground="White" FontWeight="Bold" FontSize="18" Click="Btn_Luu_Click"/>
+            <Button x:Name="btn_Sua" Content="Sửa" Width="100" Height="35" Margin="5" Background="#FFC107" Foreground="Black" FontWeight="Bold" FontSize="18" Click="Btn_Sua_Click"/>
+            <Button x:Name="btn_Xoa" Content="Xóa" Width="100" Height="35" Margin="5" Background="#F44336" Foreground="White" FontWeight="Bold" FontSize="18" Click="Btn_Xoa_Click"/>
+            <Button x:Name="btn_Thoat" Content="Thoát" Width="100" Height="35" Margin="5" Background="#4CAF50" Foreground="White" FontWeight="Bold" FontSize="18" Click="Btn_Thoat_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
